@@ -1,9 +1,9 @@
 // simulate getting products from DataBase
 const products = [
-  { name: "Apples_:", country: "Italy", cost: 3, instock: 10 },
-  { name: "Oranges:", country: "Spain", cost: 4, instock: 3 },
-  { name: "Beans__:", country: "USA", cost: 2, instock: 5 },
-  { name: "Cabbage:", country: "USA", cost: 1, instock: 8 },
+  { name: "Apples_:", country: "Italy", cost: 3, instock: 0 },
+  { name: "Oranges:", country: "Spain", cost: 4, instock: 0 },
+  { name: "Beans__:", country: "USA", cost: 2, instock: 0 },
+  { name: "Cabbage:", country: "USA", cost: 1, instock: 0 },
 ];
 //=========Cart=============
 const Cart = (props) => {
@@ -120,7 +120,7 @@ const Products = (props) => {
       <li key={index}>
         <Image src={photos[index]} width={70} roundedCircle></Image>
         <Button variant="primary" size="large">
-          {item.name}:{item.cost}
+          {item.name}: stock :{item.instock}
         </Button>
         <input name={item.name} type="submit" onClick={addToCart}></input>
       </li>
@@ -160,7 +160,7 @@ const Products = (props) => {
     return newTotal;
   };
 
-  // TODO: implement the restockProducts function
+  // ----TODO: implement the restockProducts function----
   
   const restockProducts = (url) => {
     console.log(`Restock called on ${url}`);
